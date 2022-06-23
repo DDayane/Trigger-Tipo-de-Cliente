@@ -1,0 +1,33 @@
+public class TipoClienteHandler {
+	
+    public static void tipoClienteCartao (List<Lead> Tasks){
+      
+                    for(Lead cl : Tasks)
+                    if(cl.Tipo_Cartao__c == 'Luccax Vip'){
+                        Task newTask = new Task(
+                            Subject = 'Cliente Vip',
+                            WhoId = cl.id
+                        );
+
+                                insert newTask;
+                    }
+        
+                    for(Lead cll : Tasks)
+                    if(cll.Tipo_Cartao__c == 'Luccax Premium'){
+                        Task newTasks = new Task(
+                            Subject = 'Cliente Premium',
+                            WhoId = cll.id
+                        );
+                            insert newTasks;
+                    }
+
+                    for(Lead ccll : Tasks)
+                    if(ccll.Tipo_Cartao__c == 'Luccax Platinum'){
+                        Task newTaskk = new Task( 
+                            Subject = 'Cliente Platinum',
+                            WhoId = ccll.id
+                        );
+                            insert newTaskk;
+                     }
+  }
+}
