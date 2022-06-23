@@ -1,0 +1,8 @@
+trigger TipoCliente on Lead (after insert) {
+    switch on trigger.operationtype {
+        when AFTER_INSERT {
+            TipoClienteHandler.tipoClienteCartao (trigger.new);                                                  
+        }
+    }
+                    
+}
