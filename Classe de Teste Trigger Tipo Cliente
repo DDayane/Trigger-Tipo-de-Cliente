@@ -1,0 +1,39 @@
+@isTest
+public class TipoClienteHandlerTest {
+	@isTest
+        public static void tipoClienteCartao (){
+            
+          List<Lead> leadcartao= new List<Lead>();
+            Lead ldc = new Lead();
+            ldc.LastName = 'Junior';
+            ldc.Company = 'Adc Company';
+            ldc.Tipo_Cartao__c = 'Luccax Vip';
+                
+           		leadcartao.add(ldc);
+            
+           	Lead lddc = new Lead();
+            lddc.LastName = 'Junior';
+            lddc.Company = 'Adc Company';
+            lddc.Tipo_Cartao__c = 'Luccax Premium';
+                
+           		leadcartao.add(lddc);
+            
+            Lead ldcc = new Lead();
+            ldcc.LastName = 'Junior';
+            ldcc.Company = 'Adc Company';
+            ldcc.Tipo_Cartao__c = 'Luccax Platinum';
+                
+           		leadcartao.add(ldcc);
+      
+            	
+            	insert leadcartao;
+      
+            
+ 	
+ 
+    List<Lead> lds = [SELECT id, status FROM Lead];
+ 	System.assertEquals('Luccax Vip',ldc.Tipo_Cartao__c, 'não deu certo');
+    System.assertEquals('Luccax Premium',lddc.Tipo_Cartao__c, 'não deu certo');
+    System.assertEquals('Luccax Platinum',ldcc.Tipo_Cartao__c, 'não deu certo');
+	}
+}
